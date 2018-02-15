@@ -25,5 +25,8 @@ function love.load()
 
     -- Set window title
     love.window.setTitle("Asteroids")
+
+    -- Set background colour
+    love.graphics.setBackgroundColor(0, 0, 0)
 end
 
