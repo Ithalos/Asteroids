@@ -28,5 +28,8 @@ function love.load()
 
     -- Set background colour
     love.graphics.setBackgroundColor(0, 0, 0)
+
+    -- Set foreground colour
+    love.graphics.setColor(255, 255, 255, 255)
 end
 
