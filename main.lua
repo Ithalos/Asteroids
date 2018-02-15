@@ -9,3 +9,21 @@
 WINDOW_W = 1200
 WINDOW_H = 900
 
+--[[
+    Initial program setup.
+]]
+function love.load()
+    -- Set the display mode & properties of the game window
+    love.window.setMode(
+        WINDOW_W,
+        WINDOW_H,
+        {
+            fullscreen = false,
+            vsync = true,
+            resizable = false
+        })
+
+    -- Set window title
+    love.window.setTitle("Asteroids")
+end
+
