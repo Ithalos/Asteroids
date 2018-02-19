@@ -29,3 +29,12 @@ function Vector2:Length()
     return math.sqrt(self.x * self.x + self.y * self.y)
 end
 
+--[[
+    Normalises a Vector2 and returns the result as a new Vector2.
+    A normalised Vector2 always has a length of 1.
+]]
+function Vector2:Normalise()
+    normalised = Vector2:New(self.x / self:Length(), self.y / self:Length())
+    return normalised
+end
+
