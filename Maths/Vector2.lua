@@ -22,3 +22,10 @@ function Vector2:New(x, y)
     return newVector2
 end
 
+--[[
+    Returns the length or magnitude of a Vector2.
+]]
+function Vector2:Length()
+    return math.sqrt(self.x * self.x + self.y * self.y)
+end
+
