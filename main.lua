@@ -5,6 +5,9 @@
     The main program.
 ]]
 
+-- Dependencies
+require "Maths/Vector2"
+
 -- Game window dimensions (4:3 Aspect Ratio)
 WINDOW_W = 1200
 WINDOW_H = 900
