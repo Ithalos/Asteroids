@@ -16,6 +16,6 @@ Player =
     direction,
     friction,
     speed,
-    speedCutoff,
+    speedCutoff
 }
 
