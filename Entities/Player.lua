@@ -16,13 +16,14 @@ Player =
     direction,
     friction,
     speed,
-    speedCutoff
+    speedCutoff,
+    centreOffset
 }
 
 --[[
     Creates and returns a new Player object.
 ]]
-function Player:New(vertices, position, rotationSpeed, friction, speed, speedCutoff)
+function Player:New(vertices, position, rotationSpeed, friction, speed, speedCutoff, centreOffset)
     newPlayer = {}
     setmetatable(newPlayer, self)
     self.__index = self
@@ -35,6 +36,7 @@ function Player:New(vertices, position, rotationSpeed, friction, speed, speedCut
     newPlayer.friction = friction
     newPlayer.speed = speed
     newPlayer.speedCutoff = speedCutoff
+    newPlayer.centreOffset = centreOffset
     return newPlayer
 end
 
