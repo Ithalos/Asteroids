@@ -40,3 +40,11 @@ function Player:New(vertices, position, rotationSpeed, friction, speed, speedCut
     return newPlayer
 end
 
+--[[
+    Renders the Player to the screen. Call this method in love.draw().
+]]
+function Player:Render()
+    love.graphics.draw(self.mesh, self.position.x, self.position.y, self.rotation, 1, 1,
+                       self.centreOffset.x, self.centreOffset.y)
+end
+
