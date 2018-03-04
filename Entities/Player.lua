@@ -24,8 +24,7 @@ Player =
 --[[
     Creates and returns a new Player object.
 ]]
-function Player:New(vertices, position, rotationSpeed, friction, speed,
-                    speedCutoff, centreOffset, collisionRadius)
+function Player:New(vertices, position, rotationSpeed, friction, speed, speedCutoff)
     newPlayer = {}
     setmetatable(newPlayer, self)
     self.__index = self
@@ -38,9 +37,16 @@ function Player:New(vertices, position, rotationSpeed, friction, speed,
     newPlayer.friction = friction
     newPlayer.speed = speed
     newPlayer.speedCutoff = speedCutoff
-    newPlayer.centreOffset = centreOffset
-    newPlayer.collisionRadius = collisionRadius
     return newPlayer
+end
+
+--[[
+    Sets up circle-to-circle collision settings for the player's ship.
+    This will hopefully be replaced with a more precise system at a later date.
+]]
+function Player:CircleCollisionSetup(centreOffset, collisionRadius)
+    self.centreOffset = centreOffset
+    self.collisionRadius = collisionRadius
 end
 
 --[[
