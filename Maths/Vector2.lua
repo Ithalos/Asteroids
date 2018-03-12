@@ -41,11 +41,11 @@ function Vector2:Length()
 end
 
 --[[
-    Normalises a Vector2 and returns the result as a new Vector2.
+    Normalises the Vector2 that calls this method.
     A normalised Vector2 always has a length of 1.
 ]]
 function Vector2:Normalise()
-    normalised = Vector2:New(self.x / self:Length(), self.y / self:Length())
-    return normalised
+    self.x = self.x / self:Length()
+    self.y = self.y / self:Length()
 end
 
