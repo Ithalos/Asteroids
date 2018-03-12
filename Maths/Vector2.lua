@@ -12,13 +12,24 @@ Vector2 =
 
 --[[
     Creates and returns a new Vector2, after assigning it values for x & y.
+    If no values are passed in, x & y will be initialised to 0.
 ]]
 function Vector2:New(x, y)
     newVector2 = {}
     setmetatable(newVector2, self)
     self.__index = self
-    newVector2.x = x
-    newVector2.y = y
+
+    if x == nil then
+        newVector2.x = 0
+    else
+        newVector2.x = x
+    end
+    if y == nil then
+        newVector2.y = 0
+    else
+        newVector2.y = y
+    end
+
     return newVector2
 end
 
