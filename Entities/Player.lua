@@ -24,19 +24,24 @@ Player =
 --[[
     Creates and returns a new Player object.
 ]]
-function Player:New(vertices, position, rotationSpeed, friction, speed, speedCutoff)
+function Player:New(vertices, position)
     newPlayer = {}
     setmetatable(newPlayer, self)
     self.__index = self
+
     newPlayer.mesh = love.graphics.newMesh(vertices, "fan", "dynamic")
+
     newPlayer.position = position
+    newPlayer.velocity = Vector2:New()
+    newPlayer.direction = Vector2:New()
+
     newPlayer.rotation = 0
-    newPlayer.rotationSpeed = rotationSpeed
-    newPlayer.velocity = Vector2:New(0, 0)
-    newPlayer.direction = Vector2:New(0, 0)
-    newPlayer.friction = friction
-    newPlayer.speed = speed
-    newPlayer.speedCutoff = speedCutoff
+    newPlayer.rotationSpeed = 3
+
+    newPlayer.friction = 0.15
+    newPlayer.speed = 500
+    newPlayer.speedCutoff = 0.0005
+
     return newPlayer
 end
 
