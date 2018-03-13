@@ -37,7 +37,7 @@ end
     A normalised Vector2 always has a length of 1.
 ]]
 function Vector2:Normalise()
-    length = self:Length
+    length = self:Length()
     self.x = self.x / length
     self.y = self.y / length
 end
