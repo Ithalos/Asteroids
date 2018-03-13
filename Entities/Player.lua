@@ -34,7 +34,7 @@ local vertices =
 --[[
     Creates and returns a new Player object.
 ]]
-function Player:New(vertices, position)
+function Player:New(position)
     newPlayer = {}
     setmetatable(newPlayer, self)
     self.__index = self
