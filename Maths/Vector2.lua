@@ -19,16 +19,8 @@ function Vector2:New(x, y)
     setmetatable(newVector2, self)
     self.__index = self
 
-    if x == nil then
-        newVector2.x = 0
-    else
-        newVector2.x = x
-    end
-    if y == nil then
-        newVector2.y = 0
-    else
-        newVector2.y = y
-    end
+    if x == nil then newVector2.x = 0 else newVector2.x = x end
+    if y == nil then newVector2.y = 0 else newVector2.y = y end
 
     return newVector2
 end
