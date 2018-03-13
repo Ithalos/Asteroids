@@ -22,6 +22,16 @@ Player =
 }
 
 --[[
+    The vertices that make up the player's ship.
+]]
+local vertices =
+{
+    {-25, -15, 1, 1, 255,255,255,255},
+    { 25,   0, 1, 1, 255,255,255,255},
+    {-25,  15, 1, 1, 255,255,255,255}
+}
+
+--[[
     Creates and returns a new Player object.
 ]]
 function Player:New(vertices, position)
