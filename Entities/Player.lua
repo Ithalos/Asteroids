@@ -17,7 +17,6 @@ Player =
     friction,
     speed,
     speedCutoff,
-    centreOffset,
     collisionRadius
 }
 
@@ -96,8 +95,7 @@ end
     Sets up circle-to-circle collision settings for the player's ship.
     This will hopefully be replaced with a more precise system at a later date.
 ]]
-function Player:CircleCollisionSetup(centreOffset, collisionRadius)
-    self.centreOffset = centreOffset
+function Player:CircleCollisionSetup(collisionRadius)
     self.collisionRadius = collisionRadius
 end
 
@@ -105,7 +103,8 @@ end
     Renders the Player to the screen. Call this method in love.draw().
 ]]
 function Player:Render()
-    love.graphics.draw(self.mesh, self.position.x, self.position.y, self.rotation, 1, 1,
-                       self.centreOffset.x, self.centreOffset.y)
+    love.graphics.draw(self.mesh,
+                       self.position.x, self.position.y, self.rotation,
+                       1, 1, 0, 0)
 end
 
