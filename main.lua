@@ -50,3 +50,10 @@ function love.draw()
     player:Render()
 end
 
+--[[
+    Updates the state of the game every frame.
+]]
+function love.update(dt)
+    player:Move(dt)
+end
+
