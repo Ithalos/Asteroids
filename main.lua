@@ -43,3 +43,10 @@ function love.load()
     player:CircleCollisionSetup(25)
 end
 
+--[[
+    Draws to the screen every frame.
+]]
+function love.draw()
+    player:Render()
+end
+
