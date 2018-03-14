@@ -48,6 +48,7 @@ end
 ]]
 function love.draw()
     player:Render()
+    player:RenderDebug()
 end
 
 --[[
