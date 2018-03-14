@@ -108,3 +108,11 @@ function Player:Render()
                        1, 1, 0, 0)
 end
 
+--[[
+    Renders debugging information.
+]]
+function Player:RenderDebug()
+    -- Circle collision radius
+    love.graphics.circle("line", self.position.x, self.position.y, self.collisionRadius)
+end
+
