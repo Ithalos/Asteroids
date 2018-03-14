@@ -35,5 +35,8 @@ function love.load()
 
     -- Set foreground colour
     love.graphics.setColor(255, 255, 255, 255)
+
+    -- Initialise the player's ship in the middle of the screen
+    player = Player:New(Vector2:New(WINDOW_W / 2, WINDOW_H / 2))
 end
 
