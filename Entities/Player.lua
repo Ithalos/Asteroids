@@ -58,8 +58,7 @@ end
     Moves the player's ship.
 ]]
 function Player:Move(dt)
-    self.direction.x = math.cos(self.rotation)
-    self.direction.y = math.sin(self.rotation)
+    self.direction = Vector2:New(math.cos(self.rotation), math.sin(self.rotation))
     self.direction:Normalise()
 
     if love.keyboard.isDown("left") then
