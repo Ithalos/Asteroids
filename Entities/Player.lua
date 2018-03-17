@@ -58,6 +58,7 @@ end
     Moves the player's ship.
 ]]
 function Player:Move(dt)
+    -- Normalise looking direction
     self.direction = Vector2:New(math.cos(self.rotation), math.sin(self.rotation))
     self.direction:Normalise()
 
@@ -67,14 +68,19 @@ function Player:Move(dt)
         self.rotation = self.rotation + self.rotationSpeed * dt
     end
 
+    -- Increase velocity while up arrow is down
     if love.keyboard.isDown("up") then
         self.velocity.x = self.velocity.x + self.direction.x * dt
         self.velocity.y = self.velocity.y + self.direction.y * dt
     else
         if self.velocity:Length() > 0 then
+            -- If the ship is moving slower than the cutoff speed, stop moving
             if self.velocity:Length() < self.speedCutoff then
                 self.velocity.x = 0
                 self.velocity.y = 0
+
+            -- Ship is above the cutoff speed with no user input
+            -- Apply friction
             else
                 normalised = Normalise(self.velocity)
                 normalised.x = normalised.x * self.friction * dt
@@ -86,6 +92,7 @@ function Player:Move(dt)
         end
     end
 
+    -- Update ship position
     self.position.x = self.position.x + self.velocity.x * self.speed * dt
     self.position.y = self.position.y + self.velocity.y * self.speed * dt
 end
