@@ -42,3 +42,12 @@ function Projectile:Update(dt)
     self.position.y = self.position.y + self.direction.y * self.speed * dt
 end
 
+--[[
+    Renders a Projectile object to the screen.
+]]
+function Projectile:Render()
+    love.graphics.rectangle("fill",
+                            self.position.x, self.position.y,
+                            self.size, self.size)
+end
+
