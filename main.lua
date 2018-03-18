@@ -8,6 +8,7 @@
 -- Dependencies
 require "Maths/Vector2"
 require "Entities/Player"
+require "Entities/Projectile"
 
 -- Game window dimensions (4:3 Aspect Ratio)
 WINDOW_W = 1200
