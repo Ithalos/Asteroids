@@ -34,3 +34,11 @@ function Projectile:New(position, direction)
     table.insert(projectiles, newProjectile)
 end
 
+--[[
+    Updates the position of a Projectile object.
+]]
+function Projectile:Update(dt)
+    self.position.x = self.position.x + self.direction.x * self.speed * dt
+    self.position.y = self.position.y + self.direction.y * self.speed * dt
+end
+
