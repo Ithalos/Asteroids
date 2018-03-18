@@ -51,3 +51,14 @@ function Projectile:Render()
                             self.size, self.size)
 end
 
+--[[
+    Updates the position of all existing projectiles.
+]]
+function UpdateAllProjectiles(dt)
+    if projectiles ~= nil then
+        for i = 1, #projectiles do
+            projectiles[i]:Update(dt)
+        end
+    end
+end
+
