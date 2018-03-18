@@ -18,3 +18,19 @@ Projectile =
 ]]
 local projectiles = {}
 
+--[[
+    Creates a new Projectile object and adds it to the projectiles table.
+]]
+function Projectile:New(position, direction)
+    newProjectile = {}
+    setmetatable(newProjectile, self)
+    self.__index = self
+
+    newProjectile.position = position
+    newProjectile.direction = direction
+    newProjectile.speed = 800
+    newProjectile.size = 1
+
+    table.insert(projectiles, newProjectile)
+end
+
