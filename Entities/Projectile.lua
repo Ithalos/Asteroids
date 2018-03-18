@@ -13,3 +13,8 @@ Projectile =
     size
 }
 
+--[[
+    Contains all projectiles.
+]]
+local projectiles = {}
+
