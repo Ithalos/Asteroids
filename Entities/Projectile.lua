@@ -62,3 +62,14 @@ function UpdateAllProjectiles(dt)
     end
 end
 
+--[[
+    Renders all existing projectiles.
+]]
+function RenderAllProjectiles()
+    if projectiles ~= nil then
+        for i = 1, #projectiles do
+            projectiles[i]:Render()
+        end
+    end
+end
+
