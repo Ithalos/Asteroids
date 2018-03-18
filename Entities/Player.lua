@@ -98,6 +98,17 @@ function Player:Move(dt)
 end
 
 --[[
+    Instantiates a new Projectile object at the player's position, in the
+    direction the player is aiming.
+]]
+function Player:Shoot()
+    position = Vector2:New(self.position.x, self.position.y)
+    direction = Vector2:New(self.direction.x, self.direction.y)
+    direction:Normalise()
+    Projectile:New(position, direction)
+end
+
+--[[
     Sets up circle-to-circle collision settings for the player's ship.
     This will hopefully be replaced with a more precise system at a later date.
 ]]
