@@ -24,7 +24,7 @@ function love.load()
         WINDOW_H,
         {
             fullscreen = false,
-            vsync = true,
+            vsync = false,
             resizable = false
         })
 
