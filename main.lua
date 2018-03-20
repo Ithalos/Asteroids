@@ -50,6 +50,8 @@ end
 function love.draw()
     player:Render()
     player:RenderDebug()
+
+    RenderAllProjectiles()
 end
 
 --[[
