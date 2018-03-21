@@ -42,6 +42,12 @@ function love.load()
 
     -- Set up the ship's collision radius
     player:CircleCollisionSetup(25)
+
+    -- Remember time since last shot
+    timeSinceLastShot = 0
+
+    -- Set up the cooldown between shots
+    shotCooldown = 0.1
 end
 
 --[[
@@ -62,5 +68,17 @@ function love.update(dt)
 
     -- Update the position of all projectiles
     UpdateAllProjectiles(dt)
+
+    --[[
+        Fire a projectile if the space key is down, and it has been
+        at least 0.1 seconds since the last shot.
+    ]]
+    if love.keyboard.isDown("space") then
+        if timeSinceLastShot > shotCooldown then
+            timeSinceLastShot = 0
+            player:Shoot()
+        end
+    end
+    timeSinceLastShot = timeSinceLastShot + dt
 end
 
