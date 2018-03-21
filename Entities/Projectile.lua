@@ -65,11 +65,18 @@ end
 
 --[[
     Updates the position of all existing projectiles.
+    Deletes projectiles that are no longer on screen.
 ]]
 function UpdateAllProjectiles(dt)
     if projectiles ~= nil then
-        for i = 1, #projectiles do
+        -- Iterate backwards to prevent issues when removing indices
+        for i = #projectiles, 1, -1 do
             projectiles[i]:Update(dt)
+
+            -- Remove current projectile if it's past the screen edges
+            if projectiles[i]:OutOfBounds() then
+                table.remove(projectiles, i)
+            end
         end
     end
 end
