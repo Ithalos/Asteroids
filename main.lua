@@ -59,5 +59,8 @@ end
 ]]
 function love.update(dt)
     player:Move(dt)
+
+    -- Update the position of all projectiles
+    UpdateAllProjectiles(dt)
 end
 
