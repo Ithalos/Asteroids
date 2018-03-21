@@ -52,6 +52,18 @@ function Projectile:Render()
 end
 
 --[[
+    Returns true if the projectile is past the screen edges, else false.
+]]
+function Projectile:OutOfBounds()
+    if self.position.x < 0 or self.position.x > WINDOW_W or
+       self.position.y < 0 or self.position.y > WINDOW_H then
+        return true
+    else
+        return false
+    end
+end
+
+--[[
     Updates the position of all existing projectiles.
 ]]
 function UpdateAllProjectiles(dt)
