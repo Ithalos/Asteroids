@@ -64,6 +64,7 @@ end
     Updates the state of the game every frame.
 ]]
 function love.update(dt)
+    -- Update the position of the player's ship
     player:Move(dt)
 
     -- Update the position of all projectiles
