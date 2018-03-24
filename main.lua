@@ -80,6 +80,7 @@ function love.update(dt)
             player:Shoot()
         end
     end
+    -- Update time since last shot
     timeSinceLastShot = timeSinceLastShot + dt
 end
 
