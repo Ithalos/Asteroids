@@ -16,3 +16,8 @@ Asteroid =
     collisionRadius
 }
 
+--[[
+    Contains all asteroids.
+]]
+local asteroids = {}
+
