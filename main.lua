@@ -54,6 +54,7 @@ end
     Draws to the screen every frame.
 ]]
 function love.draw()
+    -- Render the player to the screen
     player:Render()
     player:RenderDebug()
 
