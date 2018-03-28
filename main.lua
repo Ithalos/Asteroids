@@ -57,6 +57,7 @@ function love.draw()
     player:Render()
     player:RenderDebug()
 
+    -- Render all projectiles to the screen
     RenderAllProjectiles()
 end
 
