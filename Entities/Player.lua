@@ -126,7 +126,7 @@ function Player:Render()
 end
 
 --[[
-    Renders debugging information.
+    Renders the Player's debugging information. Call this method in love.draw().
 ]]
 function Player:RenderDebug()
     -- Circle collision radius
