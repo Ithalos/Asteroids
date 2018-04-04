@@ -7,12 +7,13 @@
 
 Asteroid =
 {
-    mesh,
+    image,
     position,
-    velocity,
     direction,
+    rotation,
     speed,
     size,
+    offset,
     collisionRadius
 }
 
