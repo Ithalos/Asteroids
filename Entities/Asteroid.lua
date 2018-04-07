@@ -55,3 +55,11 @@ function Asteroid:New(position)
     table.insert(asteroids, newAsteroid)
 end
 
+--[[
+    Updates the position of an Asteroid object.
+]]
+function Asteroid:Update(dt)
+    self.position.x = self.position.x + self.direction.x * self.speed * dt
+    self.position.y = self.position.y + self.direction.y * self.speed * dt
+end
+
