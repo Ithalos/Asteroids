@@ -63,3 +63,12 @@ function Asteroid:Update(dt)
     self.position.y = self.position.y + self.direction.y * self.speed * dt
 end
 
+--[[
+    Renders an Asteroid object to the screen.
+]]
+function Asteroid:Render()
+    love.graphics.draw(self.image, self.position.x, self.position.y,
+                       self.rotation, self.size, self.size,
+                       self.offset, self.offset)
+end
+
