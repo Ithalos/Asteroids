@@ -72,3 +72,10 @@ function Asteroid:Render()
                        self.offset, self.offset)
 end
 
+--[[
+    Renders an Asteroid's debugging information. Call this method in love.draw().
+]]
+function Asteroid:RenderDebug()
+    love.graphics.circle("line", self.position.x, self.position.y, self.collisionRadius)
+end
+
