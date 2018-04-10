@@ -79,3 +79,14 @@ function Asteroid:RenderDebug()
     love.graphics.circle("line", self.position.x, self.position.y, self.collisionRadius)
 end
 
+--[[
+    Updates the position of all existing asteroids.
+]]
+function UpdateAllAsteroids(dt)
+    if asteroids ~= nil then
+        for i = #asteroids, 1, -1 do
+            asteroids[i]:Update(dt)
+        end
+    end
+end
+
