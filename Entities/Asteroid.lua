@@ -90,3 +90,18 @@ function UpdateAllAsteroids(dt)
     end
 end
 
+--[[
+    Renders all existing asteroids.
+]]
+function RenderAllAsteroids(debug)
+    if asteroids ~= nil then
+        for i = #asteroids, 1, -1 do
+            asteroids[i]:Render()
+
+            if debug then
+                asteroids[i]:RenderDebug()
+            end
+        end
+    end
+end
+
