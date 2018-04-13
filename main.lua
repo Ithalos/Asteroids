@@ -60,8 +60,9 @@ function love.draw()
     -- Render the player's debug information
     player:RenderDebug()
 
-    -- Render all projectiles to the screen
+    -- Render all projectiles & asteroids to the screen
     RenderAllProjectiles()
+    RenderAllAsteroids()
 end
 
 --[[
