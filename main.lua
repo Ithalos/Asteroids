@@ -72,8 +72,9 @@ function love.update(dt)
     -- Update the position of the player's ship
     player:Move(dt)
 
-    -- Update the position of all projectiles
+    -- Update the position of all projectiles & asteroids
     UpdateAllProjectiles(dt)
+    UpdateAllAsteroids(dt)
 
     --[[
         Fire a projectile if the space key is down, and it has been
