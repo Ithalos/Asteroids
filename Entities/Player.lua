@@ -95,6 +95,12 @@ function Player:Move(dt)
     -- Update ship position
     self.position.x = self.position.x + self.velocity.x * self.speed * dt
     self.position.y = self.position.y + self.velocity.y * self.speed * dt
+
+    if self.position.x < -25 then
+	self.position.x = WINDOW_W
+    elseif self.position.x > WINDOW_W + 25 then
+	self.position = -25
+    end
 end
 
 --[[
