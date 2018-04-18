@@ -101,6 +101,11 @@ function Player:Move(dt)
     elseif self.position.x > WINDOW_W + 25 then
 	self.position = -25
     end
+    if self.position.y < -25 then
+	self.position.y = WINDOW_H
+    elseif self.position.y > WINDOW_H + 25 then
+	self.position = -25
+    end
 end
 
 --[[
