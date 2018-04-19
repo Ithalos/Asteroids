@@ -96,6 +96,7 @@ function Player:Move(dt)
     self.position.x = self.position.x + self.velocity.x * self.speed * dt
     self.position.y = self.position.y + self.velocity.y * self.speed * dt
 
+    -- Wrap to the other side of the screen if the player moves past the screen edge
     if self.position.x < -25 then
 	self.position.x = WINDOW_W
     elseif self.position.x > WINDOW_W + 25 then
