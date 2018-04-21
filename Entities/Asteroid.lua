@@ -33,7 +33,7 @@ shapes[3] = love.graphics.newImage("Resources/Images/Asteroid_3.png")
 --[[
     Creates a new Asteroid object and adds it to the asteroids table.
 ]]
-function Asteroid:New(position)
+function Asteroid:New(x, y)
     newAsteroid = {}
     setmetatable(newAsteroid, self)
     self.__index = self
@@ -41,7 +41,7 @@ function Asteroid:New(position)
     -- Select a random shape
     newAsteroid.image = shapes[math.random(1, 3)]
 
-    newAsteroid.position = position
+    newAsteroid.position = Vector2:New(x, y)
     newAsteroid.direction = Vector2:New(math.random(-10, 10), math.random(-10, 10))
     newAsteroid.direction:Normalise()
     newAsteroid.rotation = math.random(-10, 10)
