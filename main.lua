@@ -90,3 +90,13 @@ function love.update(dt)
     timeSinceLastShot = timeSinceLastShot + dt
 end
 
+--[[
+    Triggers when a key is pressed.
+]]
+function love.keypressed(key)
+    -- Exit the game
+    if key == "escape" then
+	love.event.quit()
+    end
+end
+
