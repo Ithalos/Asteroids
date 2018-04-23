@@ -96,7 +96,7 @@ end
 function love.keypressed(key)
     -- Exit the game
     if key == "escape" then
-	love.event.quit()
+        love.event.quit()
     end
 end
 
