@@ -98,5 +98,10 @@ function love.keypressed(key)
     if key == "escape" then
         love.event.quit()
     end
+
+    -- Spawn an asteroid for debugging purposes
+    if key == "return" then
+        Asteroid:New(math.random(0, WINDOW_W), math.random(0, WINDOW_H))
+    end
 end
 
