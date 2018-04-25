@@ -61,6 +61,18 @@ end
 function Asteroid:Update(dt)
     self.position.x = self.position.x + self.direction.x * self.speed * dt
     self.position.y = self.position.y + self.direction.y * self.speed * dt
+
+    -- Wrap to the other side of the screen if the asteroid is past the screen edge
+    if self.position.x < -50 then
+        self.position.x = WINDOW_W
+    elseif self.position.x > WINDOW_W + 50 then
+        self.position.x = -50
+    end
+    if self.position.y < -50 then
+        self.position.y = WINDOW_H
+    elseif self.position.y > WINDOW_H + 50 then
+        self.position.y = -50
+    end
 end
 
 --[[
