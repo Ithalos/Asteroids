@@ -92,3 +92,10 @@ function RenderAllProjectiles()
     end
 end
 
+--[[
+    Deletes a projectile object.
+]]
+function Projectile:Delete(i)
+    table.remove(projectiles, i)
+end
+
