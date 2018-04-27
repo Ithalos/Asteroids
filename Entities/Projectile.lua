@@ -99,3 +99,10 @@ function Projectile:Delete(i)
     table.remove(projectiles, i)
 end
 
+--[[
+    Returns a reference to the projectiles table.
+]]
+function GetProjectiles()
+    return projectiles
+end
+
