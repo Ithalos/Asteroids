@@ -53,6 +53,7 @@ function Asteroid:New(x, y)
     newAsteroid.collisionRadius = 50
 
     table.insert(asteroids, newAsteroid)
+    return newAsteroid
 end
 
 --[[
