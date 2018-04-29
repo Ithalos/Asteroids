@@ -118,3 +118,10 @@ function RenderAllAsteroids(debug)
     end
 end
 
+--[[
+    Returns a reference to the asteroids table.
+]]
+function GetAsteroids()
+    return asteroids
+end
+
