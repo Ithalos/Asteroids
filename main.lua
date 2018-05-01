@@ -7,6 +7,7 @@
 
 -- Dependencies
 require "Maths/Vector2"
+require "Maths/Collision"
 require "Entities/Player"
 require "Entities/Projectile"
 require "Entities/Asteroid"
