@@ -106,3 +106,10 @@ function GetProjectiles()
     return projectiles
 end
 
+--[[
+    Deletes a projectile by its table index.
+]]
+function DeleteProjectileByIndex(i)
+    table.remove(projectiles, i)
+end
+
