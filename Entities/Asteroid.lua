@@ -125,3 +125,41 @@ function GetAsteroids()
     return asteroids
 end
 
+--[[
+    Deletes an asteroid when it is hit by a projectile. Depending on the
+    size of the asteroid, two smaller asteroids may be created at its
+    location and sent in a random direction, opposite each other.
+]]
+function AsteroidHit(i)
+    -- Get a reference to the asteroid that was hit
+    h = asteroids[i]
+
+    -- Check whether we have to create two new smaller asteroids
+    if h.size > 0.5 then
+        -- Create two asteroids at the position of the hit asteroid
+        a = Asteroid:New(h.position.x, h.position.y)
+        b = Asteroid:New(h.position.x, h.position.y)
+
+        -- Reduce their size and collision radii
+        a.size = h.size - 0.2
+        b.size = h.size - 0.2
+        a.collisionRadius = h.collisionRadius - 10
+        b.collisionRadius = h.collisionRadius - 10
+
+        -- Create a random direction vector and normalise it
+        dir = Vector2:New(math.random(-10, 10), math.random(-10, 10))
+        dir:Normalise()
+
+        -- Send the two asteroids away at a straight angle
+        a.direction = Vector2:New( dir.x,  dir.y)
+        b.direction = Vector2:New(-dir.x, -dir.y)
+
+        -- Increase their speed
+        a.speed = h.speed + 30
+        b.speed = h.speed + 30
+    end
+
+    -- Remove the asteroid that was hit from the asteroids table
+    table.remove(asteroids, i)
+end
+
