@@ -77,6 +77,9 @@ function love.update(dt)
     UpdateAllProjectiles(dt)
     UpdateAllAsteroids(dt)
 
+    -- Detect collisions between asteroids & projectiles
+    DetectCollisions()
+
     --[[
         Fire a projectile if the space key is down, and it has been
         at least 0.1 seconds since the last shot.
