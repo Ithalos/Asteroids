@@ -26,8 +26,8 @@ function DetectCollisions()
             if a[i] ~= nil and p[j] ~= nil then
                 -- Check the distance between the current asteroid and projectile
                 if InRange(a[i], p[j], a[i].collisionRadius) then
-                    AsteroidHit(i)
                     DeleteProjectileByIndex(j)
+                    AsteroidHit(i)
                 end
             end
         end
