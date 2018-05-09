@@ -8,6 +8,7 @@
 
 Player =
 {
+    score,
     mesh,
     position,
     rotation,
