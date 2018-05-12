@@ -39,6 +39,8 @@ function Player:New(position)
     setmetatable(newPlayer, self)
     self.__index = self
 
+    newPlayer.score = 0
+
     newPlayer.mesh = love.graphics.newMesh(vertices, "fan", "dynamic")
 
     newPlayer.position = position
