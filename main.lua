@@ -50,6 +50,9 @@ function love.load()
 
     -- Set up the cooldown between shots
     shotCooldown = 0.1
+
+    -- Set up a font to display the player's score and lives remaining
+    font = love.graphics.newFont(20)
 end
 
 --[[
