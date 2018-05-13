@@ -165,3 +165,12 @@ function Player:IncreaseScore(size)
     self.score = self.score + points
 end
 
+--[[
+    Renders the player's score to the screen at the specified location.
+    This function should be called in love.draw().
+]]
+function Player:RenderScore(font, x, y)
+    love.graphics.setFont(font)
+    love.graphics.printf("Score: " .. self.score, x, y, 200)
+end
+
