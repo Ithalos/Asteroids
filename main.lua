@@ -61,6 +61,8 @@ end
 function love.draw()
     -- Render the player to the screen
     player:Render()
+    -- Render the player's score to the screen
+    player:RenderScore(font, 100, 100)
     -- Render the player's debug information
     player:RenderDebug()
 
