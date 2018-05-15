@@ -85,18 +85,8 @@ function love.update(dt)
     -- Detect collisions between asteroids & projectiles
     DetectCollisions()
 
-    --[[
-        Fire a projectile if the space key is down, and it has been
-        at least 0.1 seconds since the last shot.
-    ]]
-    if love.keyboard.isDown("space") then
-        if timeSinceLastShot > shotCooldown then
-            timeSinceLastShot = 0
-            player:Shoot()
-        end
-    end
-    -- Update time since last shot
-    timeSinceLastShot = timeSinceLastShot + dt
+    -- Allow the player to fire projectiles
+    player:Shoot(dt)
 end
 
 --[[
