@@ -58,6 +58,9 @@ function Player:New(x, y)
     newPlayer.speed = 500
     newPlayer.speedCutoff = 0.0005
 
+    newPlayer.timeSinceLastShot = 0
+    newPlayer.shotCooldown = 0.1
+
     return newPlayer
 end
 
@@ -118,9 +121,24 @@ end
 
 --[[
     Instantiates a new Projectile object at the player's position, in the
-    direction the player is aiming.
+    direction the player is aiming, if the shot cooldown has elapsed and
+    the spacebar is down.
 ]]
-function Player:Shoot()
+function Player:Shoot(dt)
+    -- Update the timer every tick
+    self.timeSinceLastShot = self.timeSinceLastShot + dt
+
+    if not love.keyboard.isDown("space") then
+        return
+    end
+
+    if self.timeSinceLastShot < self.shotCooldown then
+        -- Still on cooldown
+        return
+    end
+
+    -- Reset the cooldown and fire the projectile
+    self.timeSinceLastShot = 0
     position = Vector2:New(self.position.x, self.position.y)
     direction = Vector2:New(self.direction.x, self.direction.y)
     direction:Normalise()
