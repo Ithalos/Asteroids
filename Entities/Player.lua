@@ -34,7 +34,7 @@ local vertices =
 --[[
     Creates and returns a new Player object.
 ]]
-function Player:New(position)
+function Player:New(x, y)
     newPlayer = {}
     setmetatable(newPlayer, self)
     self.__index = self
@@ -43,7 +43,11 @@ function Player:New(position)
 
     newPlayer.mesh = love.graphics.newMesh(vertices, "fan", "dynamic")
 
-    newPlayer.position = position
+    if x == nil or y == nil then
+        x = love.graphics.getWidth() / 2
+        y = love.graphics.getHeight() / 2
+    end
+    newPlayer.position = Vector2:New(x, y)
     newPlayer.velocity = Vector2:New()
     newPlayer.direction = Vector2:New()
 
