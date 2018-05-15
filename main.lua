@@ -34,7 +34,7 @@ function love.load()
     love.window.setTitle("Asteroids")
 
     -- Set background colour
-    love.graphics.setBackgroundColor(0, 0, 0)
+    love.graphics.setBackgroundColor(25, 25, 25)
 
     -- Set foreground colour
     love.graphics.setColor(255, 255, 255, 255)
