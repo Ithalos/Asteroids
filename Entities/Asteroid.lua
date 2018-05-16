@@ -79,18 +79,18 @@ function Asteroid:Update(dt)
 end
 
 --[[
-    Renders an Asteroid object to the screen.
+    Renders an Asteroid object to the screen. If debugging is enabled,
+    render a circle around the asteroid that represents the collision radius.
 ]]
-function Asteroid:Render()
+function Asteroid:Render(debug)
     love.graphics.draw(self.image, self.position.x, self.position.y,
                        self.rotation, self.size, self.size,
                        self.offset, self.offset)
-end
 
---[[
-    Renders an Asteroid's debugging information. Call this method in love.draw().
-]]
-function Asteroid:RenderDebug()
+    if not debug then
+        return
+    end
+
     love.graphics.circle("line", self.position.x, self.position.y, self.collisionRadius)
 end
 
@@ -111,11 +111,7 @@ end
 function RenderAllAsteroids(debug)
     if asteroids ~= nil then
         for i = #asteroids, 1, -1 do
-            asteroids[i]:Render()
-
-            if debug then
-                asteroids[i]:RenderDebug()
-            end
+            asteroids[i]:Render(debug)
         end
     end
 end
