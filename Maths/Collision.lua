@@ -37,10 +37,14 @@ end
 
 --[[
     Checks whether two points are within a specified distance of each other.
+    Calculate the Euclidean distance between them, and return true if that
+    distance is less than the distance specified, else false.
 ]]
 function InRange(p1, p2, distance)
-    -- This is not entirely accurate when using circles, but works for now
-    return math.abs(p1.position.x - p2.position.x) < distance and
-           math.abs(p1.position.y - p2.position.y) < distance
+    deltaX = math.abs(p1.position.x - p2.position.x)
+    deltaY = math.abs(p1.position.y - p2.position.y)
+    deltaVec = Vector2:New(deltaX, deltaY)
+
+    return deltaVec:Length() < distance
 end
 
