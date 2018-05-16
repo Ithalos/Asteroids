@@ -61,6 +61,8 @@ function Player:New(x, y)
     newPlayer.timeSinceLastShot = 0
     newPlayer.shotCooldown = 0.1
 
+    newPlayer.debugColour = { 0, 0, 0, 0 }
+
     return newPlayer
 end
 

@@ -52,6 +52,8 @@ function Asteroid:New(x, y)
 
     newAsteroid.collisionRadius = 50
 
+    newAsteroid.debugColour = { 0, 0, 0, 0 }
+
     table.insert(asteroids, newAsteroid)
     return newAsteroid
 end
