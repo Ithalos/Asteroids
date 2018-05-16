@@ -33,6 +33,9 @@ function love.load()
     -- Set window title
     love.window.setTitle("Asteroids")
 
+    -- The game will render additional debugging information if set to true
+    debug = true
+
     -- Set background colour
     love.graphics.setBackgroundColor(25, 25, 25)
 
