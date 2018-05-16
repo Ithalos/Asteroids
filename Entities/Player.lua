@@ -157,18 +157,17 @@ end
 
 --[[
     Renders the Player to the screen. Call this method in love.draw().
+    If debugging is enabled, draw a circle around the player that
+    represents the collision radius.
 ]]
-function Player:Render()
-    love.graphics.draw(self.mesh,
-                       self.position.x, self.position.y, self.rotation,
+function Player:Render(debug)
+    love.graphics.draw(self.mesh, self.position.x, self.position.y, self.rotation,
                        1, 1, 0, 0)
-end
 
---[[
-    Renders the Player's debugging information. Call this method in love.draw().
-]]
-function Player:RenderDebug()
-    -- Circle collision radius
+    if not debug then
+        return
+    end
+
     love.graphics.circle("line", self.position.x, self.position.y, self.collisionRadius)
 end
 
