@@ -69,7 +69,7 @@ function love.draw()
 
     -- Render all projectiles & asteroids to the screen
     RenderAllProjectiles()
-    RenderAllAsteroids(true)
+    RenderAllAsteroids(debug)
 end
 
 --[[
