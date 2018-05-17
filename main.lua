@@ -48,12 +48,6 @@ function love.load()
     -- Set up the ship's collision radius
     player:CircleCollisionSetup(25)
 
-    -- Remember time since last shot
-    timeSinceLastShot = 0
-
-    -- Set up the cooldown between shots
-    shotCooldown = 0.1
-
     -- Set up a font to display the player's score and lives remaining
     font = love.graphics.newFont(20)
 end
