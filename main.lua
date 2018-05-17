@@ -45,9 +45,6 @@ function love.load()
     -- Initialise the player's ship in the middle of the screen
     player = Player:New()
 
-    -- Set up the ship's collision radius
-    player:CircleCollisionSetup(25)
-
     -- Set up a font to display the player's score and lives remaining
     font = love.graphics.newFont(20)
 end

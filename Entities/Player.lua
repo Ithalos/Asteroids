@@ -58,6 +58,8 @@ function Player:New(x, y)
     newPlayer.speed = 500
     newPlayer.speedCutoff = 0.0005
 
+    newPlayer.collisionRadius = 25
+
     newPlayer.timeSinceLastShot = 0
     newPlayer.shotCooldown = 0.1
 
