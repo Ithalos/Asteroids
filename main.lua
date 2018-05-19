@@ -90,6 +90,10 @@ function love.keypressed(key)
         love.event.quit()
     end
 
+    if key == "f1" then
+        debug = not debug
+    end
+
     -- Spawn an asteroid for debugging purposes
     if key == "return" then
         Asteroid:New(math.random(0, WINDOW_W), math.random(0, WINDOW_H))
