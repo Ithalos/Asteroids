@@ -5,6 +5,9 @@
     Handles collisions between asteroids, projectiles and the player.
 ]]
 
+local red   = { 255,   0,   0, 255 }
+local green = {   0, 255,   0, 255 }
+
 --[[
     Iterates over the current asteroids and projectiles in the game, and checks
     whether any projectiles are colliding with any asteroids.
