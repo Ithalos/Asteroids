@@ -170,7 +170,10 @@ function Player:Render(debug)
         return
     end
 
+    r, g, b, a = love.graphics.getColor()
+    love.graphics.setColor(self.debugColour)
     love.graphics.circle("line", self.position.x, self.position.y, self.collisionRadius)
+    love.graphics.setColor(r, g, b, a)
 end
 
 --[[
