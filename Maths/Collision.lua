@@ -39,6 +39,30 @@ function DetectCollisions()
 end
 
 --[[
+    Detects whether the player is colliding with any asteroids.
+]]
+function DetectPlayerCollision(player)
+    a = GetAsteroids()
+    player.debugColour = green
+
+    -- Return if there are no asteroids
+    if #a < 1 then return end
+    -- Iterate over every asteroid
+    for i = #a, 1, -1 do
+        -- Ensure the element exists
+        if a[i] == nil then return end
+
+        minDist = player.collisionRadius + a[i].collisionRadius
+        if InRange(player.position, a[i].position, minDist) then
+            a[i].debugColour = red
+            player.debugColour = red
+        else
+            a[i].debugColour = green
+        end
+    end
+end
+
+--[[
     Checks whether two points (2D Vectors) are within a specified distance
     of each other. Calculate the Euclidean distance between them, and return
     true if that distance is less than the distance specified, else false.
