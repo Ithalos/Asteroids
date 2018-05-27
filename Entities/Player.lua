@@ -36,38 +36,38 @@ local vertices =
     Creates and returns a new Player object.
 ]]
 function Player:New(x, y)
-    newPlayer = {}
-    setmetatable(newPlayer, self)
+    player = {}
+    setmetatable(player, self)
     self.__index = self
 
-    newPlayer.lives = 3
-    newPlayer.score = 0
+    player.lives = 3
+    player.score = 0
 
-    newPlayer.mesh = love.graphics.newMesh(vertices, "fan", "dynamic")
+    player.mesh = love.graphics.newMesh(vertices, "fan", "dynamic")
 
     if x == nil or y == nil then
         x = love.graphics.getWidth() / 2
         y = love.graphics.getHeight() / 2
     end
-    newPlayer.position = Vector2:New(x, y)
-    newPlayer.velocity = Vector2:New()
-    newPlayer.direction = Vector2:New()
+    player.position = Vector2:New(x, y)
+    player.velocity = Vector2:New()
+    player.direction = Vector2:New()
 
-    newPlayer.rotation = 0
-    newPlayer.rotationSpeed = 3
+    player.rotation = 0
+    player.rotationSpeed = 3
 
-    newPlayer.friction = 0.15
-    newPlayer.speed = 500
-    newPlayer.speedCutoff = 0.0005
+    player.friction = 0.15
+    player.speed = 500
+    player.speedCutoff = 0.0005
 
-    newPlayer.collisionRadius = 25
+    player.collisionRadius = 25
 
-    newPlayer.timeSinceLastShot = 0
-    newPlayer.shotCooldown = 0.1
+    player.timeSinceLastShot = 0
+    player.shotCooldown = 0.1
 
-    newPlayer.debugColour = { 0, 0, 0, 0 }
+    player.debugColour = { 0, 0, 0, 0 }
 
-    return newPlayer
+    return player
 end
 
 --[[
