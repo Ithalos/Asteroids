@@ -8,6 +8,7 @@
 Asteroid =
 {
     image,
+    scoreValue,
     position,
     direction,
     rotation,
@@ -40,6 +41,8 @@ function Asteroid:New(x, y)
 
     -- Select a random shape
     newAsteroid.image = shapes[math.random(1, 3)]
+
+    newAsteroid.scoreValue = 5
 
     newAsteroid.position = Vector2:New(x, y)
     newAsteroid.direction = Vector2:New(math.random(-10, 10), math.random(-10, 10))
