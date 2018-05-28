@@ -75,7 +75,7 @@ function love.update(dt)
     UpdateAllAsteroids(dt)
 
     -- Detect collisions between asteroids & projectiles
-    DetectCollisions()
+    DetectCollisions(player)
     DetectPlayerCollision(player)
 
     -- Allow the player to fire projectiles
