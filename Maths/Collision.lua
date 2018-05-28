@@ -13,8 +13,8 @@ local green = {   0, 255,   0, 255 }
     whether any projectiles are colliding with any asteroids.
 ]]
 function DetectCollisions()
-    p = GetProjectiles()
-    a = GetAsteroids()
+    local p = GetProjectiles()
+    local a = GetAsteroids()
 
     -- Return if we have no elements to iterate over
     if #a < 1 and #p < 1 then
@@ -42,7 +42,7 @@ end
     Detects whether the player is colliding with any asteroids.
 ]]
 function DetectPlayerCollision(player)
-    a = GetAsteroids()
+    local a = GetAsteroids()
     player.debugColour = green
 
     -- Return if there are no asteroids
@@ -68,9 +68,9 @@ end
     true if that distance is less than the distance specified, else false.
 ]]
 function InRange(p1, p2, distance)
-    deltaX = math.abs(p1.x - p2.x)
-    deltaY = math.abs(p1.y - p2.y)
-    deltaVec = Vector2:New(deltaX, deltaY)
+    local deltaX = math.abs(p1.x - p2.x)
+    local deltaY = math.abs(p1.y - p2.y)
+    local deltaVec = Vector2:New(deltaX, deltaY)
 
     return deltaVec:Length() < distance
 end
