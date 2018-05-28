@@ -144,6 +144,10 @@ function AsteroidHit(i)
         a = Asteroid:New(h.position.x, h.position.y)
         b = Asteroid:New(h.position.x, h.position.y)
 
+        -- Smaller asteroids are worth more points
+        a.scoreValue = h.scoreValue + 10
+        b.scoreValue = h.scoreValue + 10
+
         -- Reduce their size and collision radii
         a.size = h.size - 0.2
         b.size = h.size - 0.2

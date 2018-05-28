@@ -181,18 +181,8 @@ end
 --[[
     Increases the player's score after shooting an asteroid.
 ]]
-function Player:IncreaseScore(size)
-    points = 0
-
-    if size == 1 then
-        points = 5
-    elseif size == 0.8 then
-        points = 15
-    else
-        points = 25
-    end
-
-    self.score = self.score + points
+function Player:IncreaseScore(value)
+    self.score = self.score + value
 end
 
 --[[
