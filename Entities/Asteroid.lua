@@ -35,30 +35,30 @@ shapes[3] = love.graphics.newImage("Resources/Images/Asteroid_3.png")
     Creates a new Asteroid object and adds it to the asteroids table.
 ]]
 function Asteroid:New(x, y)
-    newAsteroid = {}
-    setmetatable(newAsteroid, self)
+    asteroid = {}
+    setmetatable(asteroid, self)
     self.__index = self
 
     -- Select a random shape
-    newAsteroid.image = shapes[math.random(1, 3)]
+    asteroid.image = shapes[math.random(1, 3)]
 
-    newAsteroid.scoreValue = 5
+    asteroid.scoreValue = 5
 
-    newAsteroid.position = Vector2:New(x, y)
-    newAsteroid.direction = Vector2:New(math.random(-10, 10), math.random(-10, 10))
-    newAsteroid.direction:Normalise()
-    newAsteroid.rotation = math.random(-10, 10)
-    newAsteroid.speed = 100
+    asteroid.position = Vector2:New(x, y)
+    asteroid.direction = Vector2:New(math.random(-10, 10), math.random(-10, 10))
+    asteroid.direction:Normalise()
+    asteroid.rotation = math.random(-10, 10)
+    asteroid.speed = 100
 
-    newAsteroid.size = 1
-    newAsteroid.offset = newAsteroid.image:getWidth() / 2
+    asteroid.size = 1
+    asteroid.offset = asteroid.image:getWidth() / 2
 
-    newAsteroid.collisionRadius = 50
+    asteroid.collisionRadius = 50
 
-    newAsteroid.debugColour = { 0, 0, 0, 0 }
+    asteroid.debugColour = { 0, 0, 0, 0 }
 
-    table.insert(asteroids, newAsteroid)
-    return newAsteroid
+    table.insert(asteroids, asteroid)
+    return asteroid
 end
 
 --[[
