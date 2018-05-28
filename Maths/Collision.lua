@@ -10,7 +10,9 @@ local green = {   0, 255,   0, 255 }
 
 --[[
     Iterates over the current asteroids and projectiles in the game, and checks
-    whether any projectiles are colliding with any asteroids.
+    whether any projectiles are colliding with any asteroids. If an asteroid is
+    hit by a projectile, deletes the projectile to prevent it from hitting the
+    newly created smaller asteroids (if any). Also increases the player's score.
 ]]
 function DetectCollisions()
     local p = GetProjectiles()
