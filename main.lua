@@ -36,11 +36,11 @@ function love.load()
     -- The game will render additional debugging information if set to true
     debug = true
 
-    -- Set background colour
-    love.graphics.setBackgroundColor(25, 25, 25)
+    -- Set a dark grey background colour
+    love.graphics.setBackgroundColor(0.1, 0.1, 0.1)
 
-    -- Set foreground colour
-    love.graphics.setColor(255, 255, 255, 255)
+    -- Set a white foreground colour
+    love.graphics.setColor(1, 1, 1, 1)
 
     -- Initialise the player's ship in the middle of the screen
     player = Player:New()
