@@ -194,3 +194,12 @@ function Player:RenderScore(font, x, y)
     love.graphics.printf("Score: " .. self.score, x, y, 200)
 end
 
+--[[
+    Renders the number of remaining lives the player has at the specified
+    location. This function should be called in love.draw().
+]]
+function Player:RenderLives(font, x, y)
+    love.graphics.setFont(font)
+    love.graphics.printf("Lives: " .. self.lives, x, y, 200)
+end
+
