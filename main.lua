@@ -55,8 +55,9 @@ end
 function love.draw()
     -- Render the player to the screen
     player:Render(debug)
-    -- Render the player's score to the screen
+    -- Render the player's score and remaining lives to the screen
     player:RenderScore(font, 100, 100)
+    player:RenderLives(font, WINDOW_W - 200, 120)
 
     -- Render all projectiles & asteroids to the screen
     RenderAllProjectiles()
