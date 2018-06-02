@@ -70,6 +70,8 @@ end
 function love.update(dt)
     -- Update the position of the player's ship
     player:Move(dt)
+    -- Allow the player to fire projectiles
+    player:Shoot(dt)
 
     -- Update the position of all projectiles & asteroids
     UpdateAllProjectiles(dt)
@@ -78,9 +80,6 @@ function love.update(dt)
     -- Detect collisions between asteroids & projectiles
     DetectCollisions(player)
     DetectPlayerCollision(player)
-
-    -- Allow the player to fire projectiles
-    player:Shoot(dt)
 end
 
 --[[
