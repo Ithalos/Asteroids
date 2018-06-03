@@ -14,7 +14,7 @@ local green = { 0, 1, 0, 1 }
     hit by a projectile, deletes the projectile to prevent it from hitting the
     newly created smaller asteroids (if any). Also increases the player's score.
 ]]
-function DetectCollisions(player)
+function DetectProjectileCollisions(player)
     local p = GetProjectiles()
     local a = GetAsteroids()
 
