@@ -44,6 +44,10 @@ function Asteroid:New(x, y)
 
     asteroid.scoreValue = 5
 
+    if x == nil or y == nil then
+        x = math.random(0, WINDOW_W)
+        y = math.random(0, WINDOW_H)
+    end
     asteroid.position = Vector2:New(x, y)
     asteroid.direction = Vector2:New(math.random(-10, 10), math.random(-10, 10))
     asteroid.direction:Normalise()
