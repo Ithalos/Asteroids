@@ -97,7 +97,7 @@ function love.keypressed(key)
 
     -- Spawn an asteroid for debugging purposes
     if key == "return" then
-        Asteroid:New(math.random(0, WINDOW_W), math.random(0, WINDOW_H))
+        Asteroid:New()
     end
 end
 
