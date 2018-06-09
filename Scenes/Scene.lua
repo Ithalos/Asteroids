@@ -18,3 +18,27 @@ function Scene:New()
     return scene
 end
 
+--[[
+    Used to perform any setup the scene might require.
+]]
+function Scene:Init()
+end
+
+--[[
+    Gets called in love.draw() every frame, renders the scene.
+]]
+function Scene:Render()
+end
+
+--[[
+    Gets called in love.update(dt) every frame, updates the scene.
+]]
+function Scene:Update(dt)
+end
+
+--[[
+    Sends keypresses to the current scene.
+]]
+function Scene:KeyPressed(key)
+end
+
