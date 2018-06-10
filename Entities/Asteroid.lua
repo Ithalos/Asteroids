@@ -134,6 +134,17 @@ function GetAsteroids()
 end
 
 --[[
+    Empties the asteroids table.
+]]
+function DeleteAllAsteroids()
+    if asteroids == nil then return end
+
+    for i = 0, #asteroids do
+        asteroids[i] = nil
+    end
+end
+
+--[[
     Deletes an asteroid when it is hit by a projectile. Depending on the
     size of the asteroid, two smaller asteroids may be created at its
     location and sent in a random direction, opposite each other.
