@@ -42,3 +42,9 @@ end
 function Scene:KeyPressed(key)
 end
 
+--[[
+    Used to perform any cleanup the scene might require.
+]]
+function Scene:Stop()
+end
+
