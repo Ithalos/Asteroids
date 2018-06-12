@@ -14,3 +14,13 @@ local options =
 }
 local selected
 
+--[[
+    MainMenu setup.
+]]
+function MainMenu:Init()
+    -- Spawn some asteroids to create a dynamic background
+    for i = 0, 5 do
+        Asteroid:New()
+    end
+end
+
