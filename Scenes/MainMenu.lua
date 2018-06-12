@@ -18,6 +18,9 @@ local selected
     MainMenu setup.
 ]]
 function MainMenu:Init()
+    -- Make "Start" the default selected option when the menu loads
+    selected = options[1]
+
     -- Spawn some asteroids to create a dynamic background
     for i = 0, 5 do
         Asteroid:New()
