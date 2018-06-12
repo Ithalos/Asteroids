@@ -25,6 +25,13 @@ function MainMenu:Init()
 end
 
 --[[
+    Render the scene every frame.
+]]
+function MainMenu:Render()
+    RenderAllAsteroids()
+end
+
+--[[
     Update the scene every frame.
 ]]
 function MainMenu:Update(dt)
