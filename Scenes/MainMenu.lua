@@ -24,3 +24,10 @@ function MainMenu:Init()
     end
 end
 
+--[[
+    Clean up MainMenu resources.
+]]
+function MainMenu:Stop()
+    DeleteAllAsteroids()
+end
+
