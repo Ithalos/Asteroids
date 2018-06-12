@@ -20,6 +20,9 @@ WINDOW_H = 900
     Initial program setup.
 ]]
 function love.load()
+    -- Seed the pseudorandom number generator with the current time
+    math.randomseed(os.time())
+
     -- Set the display mode & properties of the game window
     love.window.setMode(
         WINDOW_W,
