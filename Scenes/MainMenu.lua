@@ -25,6 +25,13 @@ function MainMenu:Init()
 end
 
 --[[
+    Update the scene every frame.
+]]
+function MainMenu:Update(dt)
+    UpdateAllAsteroids(dt)
+end
+
+--[[
     Clean up MainMenu resources.
 ]]
 function MainMenu:Stop()
