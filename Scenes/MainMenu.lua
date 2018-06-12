@@ -19,7 +19,7 @@ local selected
 ]]
 function MainMenu:Init()
     -- Make "Start" the default selected option when the menu loads
-    selected = options[1]
+    selected = 1
 
     -- Spawn some asteroids to create a dynamic background
     for i = 0, 5 do
@@ -36,7 +36,7 @@ function MainMenu:Render()
     r, g, b, a = love.graphics.getColor()
     -- Iterate over the menu options and highlight the selected option in red
     for i = 1, #options do
-        if options[i] == selected then
+        if options[i] == options[selected] then
             love.graphics.setColor(1, 0, 0, 1)
         end
         love.graphics.printf(options[i], 0, (WINDOW_H * 0.75) + (i * 50), WINDOW_W, "center")
