@@ -11,6 +11,7 @@ require "Maths/Collision"
 require "Entities/Player"
 require "Entities/Projectile"
 require "Entities/Asteroid"
+require "Scenes/Scene"
 
 -- Game window dimensions (4:3 Aspect Ratio)
 WINDOW_W = 1200
