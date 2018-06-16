@@ -13,6 +13,9 @@ require "Entities/Projectile"
 require "Entities/Asteroid"
 require "Scenes/Scene"
 
+require "Scenes/MainMenu"
+require "Scenes/Game"
+
 -- Game window dimensions (4:3 Aspect Ratio)
 WINDOW_W = 1200
 WINDOW_H = 900
