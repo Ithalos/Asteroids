@@ -5,3 +5,5 @@
     The scene file for the game.
 ]]
 
+Game = Scene:New()
+
