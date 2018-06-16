@@ -9,7 +9,7 @@ MainMenu = Scene:New()
 
 local options =
 {
-    "Start",
+    "Play",
     "Quit"
 }
 local selected
