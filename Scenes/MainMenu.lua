@@ -61,3 +61,31 @@ function MainMenu:Stop()
     DeleteAllAsteroids()
 end
 
+--[[
+    Let the user navigate the main menu using the keyboard.
+]]
+function MainMenu:KeyPressed(key)
+    if key == "down" then
+        selected = selected + 1
+    elseif key == "up" then
+        selected = selected - 1
+    end
+
+    -- Clamp values
+    if selected < 1 then
+        selected = 1
+    elseif selected > #options then
+        selected = #options
+    end
+
+    if key == "return" then
+        -- Selected: "Play"
+        if selected == 1 then
+            LoadScene(2)
+        -- Selected: "Quit"
+        elseif selected == 2 then
+            love.event.quit()
+        end
+    end
+end
+
