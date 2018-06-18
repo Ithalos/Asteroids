@@ -38,3 +38,15 @@ function Game:Init()
     end
 end
 
+--[[
+    Render the scene every frame.
+]]
+function Game:Render()
+    self.player:Render(debug)
+    self.player:RenderScore(font, 100, 100)
+    self.player:RenderLives(font, WINDOW_W - 200, 120)
+
+    RenderAllProjectiles()
+    RenderAllAsteroids(debug)
+end
+
