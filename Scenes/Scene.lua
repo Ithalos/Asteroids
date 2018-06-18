@@ -48,3 +48,16 @@ end
 function Scene:Stop()
 end
 
+--[[
+    Stop the current scene (if there is one), then load and start a scene
+    by its index in the Scenes table.
+]]
+function LoadScene(i)
+    if scene ~= nil then
+        scene:Stop()
+    end
+
+    scene = Scenes[i]
+    scene:Init()
+end
+
