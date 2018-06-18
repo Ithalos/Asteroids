@@ -53,6 +53,10 @@ end
     by its index in the Scenes table.
 ]]
 function LoadScene(i)
+    if i < 1 or i > #Scenes then
+        error("Cannot load scene: index out of bounds!")
+    end
+
     if scene ~= nil then
         scene:Stop()
     end
