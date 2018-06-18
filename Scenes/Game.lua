@@ -7,3 +7,6 @@
 
 Game = Scene:New()
 
+-- Asteroid spawn locations
+local spawns
+
