@@ -67,39 +67,22 @@ end
     Draws to the screen every frame.
 ]]
 function love.draw()
-    -- Render the player to the screen
-    player:Render(debug)
-    -- Render the player's score and remaining lives to the screen
-    player:RenderScore(font, 100, 100)
-    player:RenderLives(font, WINDOW_W - 200, 120)
-
-    -- Render all projectiles & asteroids to the screen
-    RenderAllProjectiles()
-    RenderAllAsteroids(debug)
+    scene:Render()
 end
 
 --[[
     Updates the state of the game every frame.
 ]]
 function love.update(dt)
-    -- Update the position of the player's ship
-    player:Move(dt)
-    -- Allow the player to fire projectiles
-    player:Shoot(dt)
-
-    -- Update the position of all projectiles & asteroids
-    UpdateAllProjectiles(dt)
-    UpdateAllAsteroids(dt)
-
-    -- Detect collisions between asteroids & projectiles
-    DetectProjectileCollisions(player)
-    DetectPlayerCollision(player)
+    scene:Update(dt)
 end
 
 --[[
     Triggers when a key is pressed.
 ]]
 function love.keypressed(key)
+    scene:KeyPressed(key)
+
     -- Exit the game
     if key == "escape" then
         love.event.quit()
