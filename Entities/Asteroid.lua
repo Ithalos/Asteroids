@@ -56,10 +56,10 @@ function Asteroid:New(x, y)
     asteroid.rotation = math.random(-10, 10)
     asteroid.speed = 100
 
-    asteroid.size = 1
+    asteroid.size = 0.75
     asteroid.offset = asteroid.image:getWidth() / 2
 
-    asteroid.collisionRadius = 50
+    asteroid.collisionRadius = asteroid.size * 50
 
     asteroid.debugColour = { 0, 0, 0, 0 }
 
@@ -168,8 +168,8 @@ function AsteroidHit(i)
         -- Reduce their size and collision radii
         a.size = h.size - 0.2
         b.size = h.size - 0.2
-        a.collisionRadius = h.collisionRadius - 10
-        b.collisionRadius = h.collisionRadius - 10
+        a.collisionRadius = a.size * 50
+        b.collisionRadius = b.size * 50
 
         -- Create a random direction vector and normalise it
         dir = Vector2:New(math.random(-10, 10), math.random(-10, 10))
@@ -180,8 +180,8 @@ function AsteroidHit(i)
         b.direction = Vector2:New(-dir.x, -dir.y)
 
         -- Increase their speed
-        a.speed = h.speed + 30
-        b.speed = h.speed + 30
+        a.speed = h.speed + 25
+        b.speed = h.speed + 25
     end
 
     -- Remove the asteroid that was hit from the asteroids table
