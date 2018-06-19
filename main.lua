@@ -49,9 +49,6 @@ function love.load()
     -- Set a white foreground colour
     love.graphics.setColor(1, 1, 1, 1)
 
-    -- Initialise the player's ship in the middle of the screen
-    player = Player:New()
-
     -- Set up a font to display the player's score and lives remaining
     font = love.graphics.newFont(20)
     love.graphics.setFont(font)
