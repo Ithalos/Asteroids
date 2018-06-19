@@ -108,10 +108,5 @@ function love.keypressed(key)
     if key == "f1" then
         debug = not debug
     end
-
-    -- Spawn an asteroid for debugging purposes
-    if key == "return" then
-        Asteroid:New()
-    end
 end
 
