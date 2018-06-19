@@ -50,3 +50,17 @@ function Game:Render()
     RenderAllAsteroids(debug)
 end
 
+--[[
+    Update the scene every frame.
+]]
+function Game:Update(dt)
+    self.player:Move(dt)
+    self.player:Shoot(dt)
+
+    UpdateAllAsteroids(dt)
+    UpdateAllProjectiles(dt)
+
+    DetectProjectileCollisions(self.player)
+    DetectPlayerCollision(self.player)
+end
+
