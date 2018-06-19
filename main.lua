@@ -52,6 +52,13 @@ function love.load()
     -- Set up a font to display the player's score and lives remaining
     font = love.graphics.newFont(20)
     love.graphics.setFont(font)
+
+    -- Initialise scenes
+    Scenes =
+    {
+        MainMenu,
+        Game
+    }
 end
 
 --[[
