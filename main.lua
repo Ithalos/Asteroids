@@ -59,6 +59,8 @@ function love.load()
         MainMenu,
         Game
     }
+    -- Load the main menu scene
+    LoadScene(1)
 end
 
 --[[
