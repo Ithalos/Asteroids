@@ -5,6 +5,10 @@
     The main program.
 ]]
 
+-- Game window dimensions (4:3 Aspect Ratio)
+WINDOW_W = 1200
+WINDOW_H = 900
+
 -- Dependencies
 require "Maths/Vector2"
 require "Maths/Collision"
@@ -15,10 +19,6 @@ require "Scenes/Scene"
 
 require "Scenes/MainMenu"
 require "Scenes/Game"
-
--- Game window dimensions (4:3 Aspect Ratio)
-WINDOW_W = 1200
-WINDOW_H = 900
 
 --[[
     Initial program setup.
