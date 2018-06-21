@@ -122,6 +122,20 @@ function Asteroid:Render(debug)
 end
 
 --[[
+    Spawns a specified number of asteroids.
+]]
+function SpawnAsteroids(count)
+    if count < 1 then
+        error("Asteroid spawn count cannot be less than 1!")
+    end
+
+    for i = 1, count do
+        local spawn = spawns[math.random(1, #spawns)]
+        Asteroid:New(spawn[1], spawn[2])
+    end
+end
+
+--[[
     Updates the position of all existing asteroids.
 ]]
 function UpdateAllAsteroids(dt)
