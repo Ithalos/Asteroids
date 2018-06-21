@@ -13,13 +13,7 @@ Game = Scene:New()
 function Game:Init()
     self.player = Player:New()
 
-    -- Number of initial asteroids to spawn
-    local asteroidCount = 10
-    for i = 1, asteroidCount do
-        -- Select a random location from the spawns table
-        local spawn = spawns[math.random(1, #spawns)]
-        Asteroid:New(spawn[1], spawn[2])
-    end
+    SpawnAsteroids(10)
 end
 
 --[[
