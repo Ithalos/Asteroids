@@ -73,7 +73,7 @@ end
 --[[
     Moves the player's ship.
 ]]
-function Player:Move(dt)
+function Player:Update(dt)
     -- Normalise looking direction
     self.direction = Vector2:New(math.cos(self.rotation), math.sin(self.rotation))
     self.direction:Normalise()

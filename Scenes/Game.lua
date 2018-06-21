@@ -54,7 +54,7 @@ end
     Update the scene every frame.
 ]]
 function Game:Update(dt)
-    self.player:Move(dt)
+    self.player:Update(dt)
     self.player:Shoot(dt)
 
     UpdateAllAsteroids(dt)
