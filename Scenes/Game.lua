@@ -7,11 +7,18 @@
 
 Game = Scene:New()
 
+local respawnTime = 2
+local timer
+local wait
+
 --[[
     Game setup.
 ]]
 function Game:Init()
     self.player = Player:New()
+
+    timer = respawnTime
+    wait = false
 
     SpawnAsteroids(10)
 end
@@ -40,5 +47,21 @@ function Game:Update(dt)
 
     DetectProjectileCollisions(self.player)
     DetectPlayerCollision(self.player)
+
+    --[[
+        If there are no more asteroids, wait a few seconds (defined by respawnTime),
+        then spawn a new wave.
+    ]]
+    if #GetAsteroids() < 1 then
+        wait = true
+    end
+    if wait then
+        timer = timer - dt
+    end
+    if timer < 0 then
+        timer = respawnTime
+        wait = false
+        SpawnAsteroids(10)
+    end
 end
 
