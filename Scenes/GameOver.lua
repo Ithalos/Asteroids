@@ -43,3 +43,17 @@ function GameOver:Render()
     RenderAllAsteroids()
 end
 
+--[[
+    Update the scene every frame.
+]]
+function GameOver:Update(dt)
+    UpdateAllAsteroids(dt)
+end
+
+--[[
+    Clean up resources.
+]]
+function GameOver:Stop()
+    DeleteAllAsteroids()
+end
+
