@@ -58,7 +58,8 @@ function love.load()
     Scenes =
     {
         MainMenu,
-        Game
+        Game,
+        GameOver
     }
     -- Load the main menu scene
     LoadScene(1)
