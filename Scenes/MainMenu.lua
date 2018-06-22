@@ -22,9 +22,7 @@ function MainMenu:Init()
     selected = 1
 
     -- Spawn some asteroids to create a dynamic background
-    for i = 0, 5 do
-        Asteroid:New()
-    end
+    SpawnAsteroids(5)
 end
 
 --[[
