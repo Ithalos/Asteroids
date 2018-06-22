@@ -18,7 +18,7 @@ local selected
     MainMenu setup.
 ]]
 function MainMenu:Init()
-    -- Make "Start" the default selected option when the menu loads
+    -- Make "Play" the default selected option when the scene loads
     selected = 1
 
     -- Spawn some asteroids to create a dynamic background
@@ -55,14 +55,14 @@ function MainMenu:Update(dt)
 end
 
 --[[
-    Clean up MainMenu resources.
+    Clean up resources.
 ]]
 function MainMenu:Stop()
     DeleteAllAsteroids()
 end
 
 --[[
-    Let the user navigate the main menu using the keyboard.
+    Let the user navigate the menu using the keyboard.
 ]]
 function MainMenu:KeyPressed(key)
     if key == "down" then
