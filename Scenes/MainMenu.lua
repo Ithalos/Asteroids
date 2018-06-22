@@ -15,7 +15,7 @@ local options =
 local selected
 
 --[[
-    MainMenu setup.
+    Scene setup.
 ]]
 function MainMenu:Init()
     -- Make "Play" the default selected option when the scene loads
