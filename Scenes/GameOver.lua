@@ -14,3 +14,11 @@ local options =
 }
 local selected
 
+--[[
+    Scene setup.
+]]
+function GameOver:Init()
+    -- Make "Play again" the default selected option when the scene loads
+    selected = 1
+end
+
