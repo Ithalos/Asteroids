@@ -19,6 +19,7 @@ require "Scenes/Scene"
 
 require "Scenes/MainMenu"
 require "Scenes/Game"
+require "Scenes/GameOver"
 
 --[[
     Initial program setup.
