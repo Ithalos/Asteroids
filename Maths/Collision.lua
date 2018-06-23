@@ -5,8 +5,9 @@
     Handles collisions between asteroids, projectiles and the player.
 ]]
 
-local red   = { 1, 0, 0, 1 }
-local green = { 0, 1, 0, 1 }
+local red    = { 1,   0, 0, 1 }
+local green  = { 0,   1, 0, 1 }
+local orange = { 1, 0.5, 0, 1 }
 
 --[[
     Iterates over the current asteroids and projectiles in the game, and checks
