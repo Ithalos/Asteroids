@@ -43,6 +43,14 @@ function Player:New(x, y)
     player.lives = 3
     player.score = 0
 
+    player.invulnerable = false
+    -- Maximum time the player can be invulnerable, in seconds
+    player.invulnerableDuration = 1.5
+    -- Invulnerability time remaining, in seconds
+    player.invulnerableTimer = player.invulnerableDuration
+    -- If hide is true, don't render the player
+    player.hide = false
+
     player.mesh = love.graphics.newMesh(vertices, "fan", "dynamic")
 
     if x == nil or y == nil then
