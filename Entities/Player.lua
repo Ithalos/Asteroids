@@ -173,6 +173,10 @@ end
     represents the collision radius.
 ]]
 function Player:Render(debug)
+    if self.hide then
+        return
+    end
+
     love.graphics.draw(self.mesh, self.position.x, self.position.y, self.rotation,
                        1, 1, 0, 0)
 
