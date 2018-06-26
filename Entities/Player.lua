@@ -215,3 +215,20 @@ function Player:RenderLives(font, x, y)
     love.graphics.printf("Lives: " .. self.lives, x, y, 200)
 end
 
+--[[
+    This method gets called whenever the player collides with an asteroid.
+]]
+function Player:Collided()
+    self.lives = self.lives - 1
+    self.invulnerable = true
+
+    if self.lives < 1 then
+        -- Game over
+        LoadScene(3)
+    end
+
+    -- Reset movement and respawn the player in the middle of the screen
+    self.velocity = Vector2:New()
+    self.position = Vector2:New(WINDOW_W / 2, WINDOW_H / 2)
+end
+
