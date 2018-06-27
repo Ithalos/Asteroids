@@ -136,7 +136,7 @@ function Player:Update(dt)
     if self.invulnerable then
         self.invulnerableTimer = self.invulnerableTimer - dt
 
-        -- Blink the player to give a visual cue he is invulnerable
+        -- Blink the player's ship to give a visual cue it is invulnerable
         if self.invulnerableTimer % 0.2 < 0.1 then
             self.hide = true
         else
