@@ -131,6 +131,16 @@ function Player:Update(dt)
     elseif self.position.y > WINDOW_H + 25 then
 	self.position.y = -25
     end
+
+    -- Ensure the player cannot instantly lose to an asteroid at the respawn point
+    if self.invulnerable then
+        self.invulnerableTimer = self.invulnerableTimer - dt
+
+        if self.invulnerableTimer < 0 then
+            self.invulnerable = false
+            self.invulnerableTimer = self.invulnerableDuration
+        end
+    end
 end
 
 --[[
