@@ -136,6 +136,13 @@ function Player:Update(dt)
     if self.invulnerable then
         self.invulnerableTimer = self.invulnerableTimer - dt
 
+        -- Blink the player to give a visual cue he is invulnerable
+        if self.invulnerableTimer % 0.2 < 0.1 then
+            self.hide = true
+        else
+            self.hide = false
+        end
+
         if self.invulnerableTimer < 0 then
             self.invulnerable = false
             self.invulnerableTimer = self.invulnerableDuration
