@@ -57,8 +57,14 @@ function DetectPlayerCollision(player)
 
         minDist = player.collisionRadius + a[i].collisionRadius
         if InRange(player.position, a[i].position, minDist) then
-            a[i].debugColour = red
-            player.debugColour = red
+            if player.invulnerable then
+                a[i].debugColour   = orange
+                player.debugColour = orange
+            else
+                player:Collided()
+                a[i].debugColour   = red
+                player.debugColour = red
+            end
         else
             a[i].debugColour = green
         end
