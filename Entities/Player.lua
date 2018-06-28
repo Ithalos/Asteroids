@@ -42,6 +42,7 @@ function Player:New(x, y)
 
     player.lives = 3
     player.score = 0
+    player.scoreTier = 1
 
     player.invulnerable = false
     -- Maximum time the player can be invulnerable, in seconds
@@ -212,6 +213,12 @@ end
 ]]
 function Player:IncreaseScore(value)
     self.score = self.score + value
+
+    -- Give the player an additional life for every 10000 points scored
+    if self.score > (self.scoreTier * 10000) then
+        self.lives = self.lives + 1
+        self.scoreTier = self.scoreTier + 1
+    end
 end
 
 --[[
