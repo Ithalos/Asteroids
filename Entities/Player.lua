@@ -52,6 +52,10 @@ function Player:New(x, y)
     -- If hide is true, don't render the player
     player.hide = false
 
+    player.teleportDuration = 2
+    player.teleportTimer = player.teleportDuration
+    player.teleporting = false
+
     player.mesh = love.graphics.newMesh(vertices, "fan", "dynamic")
 
     if x == nil or y == nil then
@@ -147,6 +151,27 @@ function Player:Update(dt)
         if self.invulnerableTimer < 0 then
             self.invulnerable = false
             self.invulnerableTimer = self.invulnerableDuration
+        end
+    end
+
+    -- Let the player teleport to a random location
+    if love.keyboard.isDown("rshift") then
+        self.teleporting = true
+        self.invulnerable = true
+    end
+    -- Hide the player while teleporting
+    if self.teleporting then
+        self.hide = true
+        self.teleportTimer = self.teleportTimer - dt
+
+        -- Give the ship a random new location and set its velocity to zero
+        if self.teleportTimer <= 0 then
+            self.position = Vector2:New(math.random(0, WINDOW_W), math.random(0, WINDOW_H))
+            self.velocity = Vector2:New()
+            self.teleporting = false
+            self.hide = false
+            self.invulnerable = false
+            self.teleportTimer = self.teleportDuration
         end
     end
 end
