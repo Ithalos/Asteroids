@@ -124,13 +124,19 @@ end
 --[[
     Spawns a specified number of asteroids.
 ]]
-function SpawnAsteroids(count)
+function SpawnAsteroids(count, random)
     if count < 1 then
         error("Asteroid spawn count cannot be less than 1!")
     end
 
     for i = 1, count do
-        local spawn = spawns[math.random(1, #spawns)]
+    local spawn
+        if random == nil or not random then
+            -- Cycle through the spawns to get an even distribution
+            spawn = spawns[(i % #spawns) + 1]
+        else
+            spawn = spawns[math.random(1, #spawns)]
+        end
         Asteroid:New(spawn[1], spawn[2])
     end
 end
