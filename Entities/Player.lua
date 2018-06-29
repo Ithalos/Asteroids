@@ -52,8 +52,11 @@ function Player:New(x, y)
     -- If hide is true, don't render the player
     player.hide = false
 
+    -- The time it takes the player to teleport to a random new location, in seconds
     player.teleportDuration = 2
+    -- Keeps track of the time remaining on the current teleport, in seconds
     player.teleportTimer = player.teleportDuration
+    -- Whether the player is currently teleporting
     player.teleporting = false
 
     player.mesh = love.graphics.newMesh(vertices, "fan", "dynamic")
