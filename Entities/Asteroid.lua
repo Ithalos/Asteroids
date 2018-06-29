@@ -59,7 +59,7 @@ function Asteroid:New(x, y)
     -- Select a random shape
     asteroid.image = shapes[math.random(1, 3)]
 
-    asteroid.scoreValue = 5
+    asteroid.scoreValue = 20
 
     if x == nil or y == nil then
         x = math.random(0, WINDOW_W)
@@ -197,8 +197,8 @@ function AsteroidHit(i)
         b = Asteroid:New(h.position.x, h.position.y)
 
         -- Smaller asteroids are worth more points
-        a.scoreValue = h.scoreValue + 10
-        b.scoreValue = h.scoreValue + 10
+        a.scoreValue = h.scoreValue + 30
+        b.scoreValue = h.scoreValue + 30
 
         -- Reduce their size and collision radii
         a.size = h.size - 0.2
