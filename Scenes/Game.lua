@@ -58,7 +58,7 @@ function Game:Update(dt)
     if wait then
         timer = timer - dt
     end
-    if timer < 0 then
+    if timer <= 0 then
         timer = respawnTime
         wait = false
         SpawnAsteroids(10)
