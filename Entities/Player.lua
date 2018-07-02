@@ -211,14 +211,6 @@ function Player:Shoot(dt)
 end
 
 --[[
-    Sets up circle-to-circle collision settings for the player's ship.
-    This will hopefully be replaced with a more precise system at a later date.
-]]
-function Player:CircleCollisionSetup(collisionRadius)
-    self.collisionRadius = collisionRadius
-end
-
---[[
     Renders the Player to the screen. Call this method in love.draw().
     If debugging is enabled, draw a circle around the player that
     represents the collision radius.
