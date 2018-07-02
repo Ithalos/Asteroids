@@ -52,6 +52,8 @@ function love.load()
 
     -- Set up a font to display the player's score and lives remaining
     font = love.graphics.newFont(20)
+    -- Smaller font to display the controls
+    keysFont = love.graphics.newFont(12)
     love.graphics.setFont(font)
 
     -- Initialise scenes
