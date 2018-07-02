@@ -163,7 +163,7 @@ function Player:Update(dt)
     end
 
     -- Let the player teleport to a random location
-    if love.keyboard.isDown("rshift") then
+    if love.keyboard.isDown("lctrl") then
         self.teleporting = true
         self.invulnerable = true
     end
