@@ -53,7 +53,7 @@ function Player:New(x, y)
     player.hide = false
 
     -- The time it takes the player to teleport to a random new location, in seconds
-    player.teleportDuration = 2
+    player.teleportDuration = 0.5
     -- Keeps track of the time remaining on the current teleport, in seconds
     player.teleportTimer = player.teleportDuration
     -- Whether the player is currently teleporting
