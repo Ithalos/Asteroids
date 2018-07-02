@@ -124,6 +124,11 @@ function Player:Update(dt)
         end
     end
 
+    -- Speed limit
+    if self.velocity:Length() > 1 then
+        self.velocity:Normalise()
+    end
+
     -- Update ship position
     self.position.x = self.position.x + self.velocity.x * self.speed * dt
     self.position.y = self.position.y + self.velocity.y * self.speed * dt
