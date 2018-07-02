@@ -42,11 +42,13 @@ function MainMenu:Render()
         love.graphics.setColor(r, g, b, a)
     end
 
-    -- Display the controls in a smaller font
+    -- Display the controls in a smaller font, in a red colour
     love.graphics.setFont(keysFont)
+    love.graphics.setColor(1, 0, 0, 1)
     love.graphics.printf("Movement:     Arrow Keys",    50, 730, WINDOW_W, "left")
     love.graphics.printf("Shoot:            Spacebar",  50, 760, WINDOW_W, "left")
     love.graphics.printf("Hyperspace:   Left Control",  50, 790, WINDOW_W, "left")
+    love.graphics.setColor(r, g, b, a)
     love.graphics.setFont(font)
 
     RenderAllAsteroids()
