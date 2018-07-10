@@ -1,7 +1,7 @@
-# Asteroids
+## Asteroids
 The 1979 Atari classic, remade in Love2D using Lua.
   
-## Requirements:
+### Requirements:
 #### Arch Linux
 ```
 pacman -S love
@@ -12,3 +12,4 @@ apt-get install love
 ```
 #### Windows
 [Love2D](https://love2d.org/)
+
