@@ -13,3 +13,11 @@ apt-get install love
 #### Windows
 [Love2D](https://love2d.org/)
 
+### Running the game:
+#### Linux
+```
+git clone https://github.com/Ithalos/Asteroids.git Asteroids
+cd Asteroids
+love .
+```
+
